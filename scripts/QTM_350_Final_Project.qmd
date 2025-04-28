@@ -62,6 +62,8 @@ We narrowed our analysis to the period from 1990 to 2023 to ensure consistency a
 
 -   **Transformation**: Data was reshaped to create new variables such as percentage changes between 1990 and 2023.
 
+- We removed rows with missing (NA) values to ease the analysis and maintain consistency across regions. While the presence of missing data may reflect differences in countries' data collection capacities rather than true bias, including incomplete records would have complicated comparisons and trend analyses across indicators.
+
 The following Python code was used for merging:
 
 ```{python, echo = True}
