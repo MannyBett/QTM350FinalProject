@@ -79,7 +79,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <div id="quarto-content" class="page-columns page-rows-contents page-layout-article">
 <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-<div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="QTM_350_Final_Project.pdf"><i class="bi bi-file-pdf"></i>PDF</a></li></ul></div></div>
+<div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="../QTM_350_Final_Project.pdf"><i class="bi bi-file-pdf"></i>PDF</a></li></ul></div></div>
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
@@ -149,9 +149,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li><p><strong>Date Filtering</strong>: Only observations between 1990 and 2023 were kept.</p></li>
 <li><p><strong>Aggregation</strong>: Countries were aggregated into seven major global regions for analysis consistency.</p></li>
 <li><p><strong>Transformation</strong>: Data was reshaped to create new variables such as percentage changes between 1990 and 2023.</p></li>
+<li><p>We removed rows with missing (NA) values to ease the analysis and maintain consistency across regions. While the presence of missing data may reflect differences in countries’ data collection capacities rather than true bias, including incomplete records would have complicated comparisons and trend analyses across indicators.</p></li>
 </ul>
 <p>The following Python code was used for merging:</p>
-<div id="3d9b7432" class="cell" data-execution_count="1">
+<div id="ab37ecf2" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> wbdata</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> sqlite3</span>
@@ -339,8 +340,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </ul></li>
 </ul>
 <p>This selection was made to focus on broad global patterns while maintaining sufficient regional diversity.</p>
-<div id="14b81c8a" class="cell tbl-cap-location-top" data-tbl-colwidths="[0.15,0.15,0.15,0.15,0.15,0.15,0.15]" data-execution_count="2">
-<div class="cell-output cell-output-display" data-execution_count="22">
+<div id="c66c34ca" class="cell tbl-cap-location-top" data-tbl-colwidths="[0.15,0.15,0.15,0.15,0.15,0.15,0.15]" data-execution_count="2">
+<div class="cell-output cell-output-display" data-execution_count="2">
 <div>
 
 
@@ -407,7 +408,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="life-expectancy-trends-over-time-19902023" class="level2">
 <h2 class="anchored" data-anchor-id="life-expectancy-trends-over-time-19902023">Life Expectancy Trends Over Time (1990–2023)</h2>
 <p>We visualized life expectancy trends across the seven major regions from 1990 to 2023. This helps identify the pace of health improvements over the past three decades.</p>
-<div id="29ea0d13" class="cell" data-execution_count="3">
+<div id="d7d9ab12" class="cell" data-execution_count="3">
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
@@ -428,7 +429,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="under-5-mortality-rate-trends-over-time-19902023" class="level2">
 <h2 class="anchored" data-anchor-id="under-5-mortality-rate-trends-over-time-19902023">Under-5 Mortality Rate Trends Over Time (1990–2023)</h2>
 <p>Next, we examined how under-5 mortality rates evolved across the same seven global regions from 1990 to 2023.</p>
-<div id="56caa0a9" class="cell" data-execution_count="4">
+<div id="c5e471f8" class="cell" data-execution_count="4">
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
@@ -449,7 +450,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="adolescent-fertility-rate-trends-over-time-19902023" class="level2">
 <h2 class="anchored" data-anchor-id="adolescent-fertility-rate-trends-over-time-19902023">Adolescent Fertility Rate Trends Over Time (1990–2023)</h2>
 <p>Finally, we analyzed how adolescent fertility rates evolved across regions between 1990 and 2023.</p>
-<div id="3395e724" class="cell" data-execution_count="5">
+<div id="acb52c7a" class="cell" data-execution_count="5">
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
@@ -502,7 +503,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="population-health-improvements-by-region-19902023" class="level2">
 <h2 class="anchored" data-anchor-id="population-health-improvements-by-region-19902023">Population Health Improvements by Region (1990–2023)</h2>
 <p>We calculated the percentage change in life expectancy, under-5 mortality, and adolescent fertility for each region between 1990 and 2023. The figure below shows a side-by-side comparison of improvements across these indicators.</p>
-<div id="4964cb4d" class="cell" data-execution_count="8">
+<div id="662c35b7" class="cell" data-execution_count="8">
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
@@ -524,7 +525,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="correlation-between-indicators" class="level2">
 <h2 class="anchored" data-anchor-id="correlation-between-indicators">Correlation Between Indicators</h2>
 <p>To better understand the relationships between improvements in life expectancy and the declines in under-5 mortality and adolescent fertility, we calculated Pearson correlation coefficients across regions.</p>
-<div id="33bffffb" class="cell" data-execution_count="9">
+<div id="c5dbfb1f" class="cell" data-execution_count="9">
 <div class="cell-output cell-output-stdout">
 <pre><code>Correlation between Life Expectancy Change and Under-5 Mortality Change: -0.364
 Correlation between Life Expectancy Change and Adolescent Fertility Change: 0.388</code></pre>
@@ -545,7 +546,7 @@ Correlation between Life Expectancy Change and Adolescent Fertility Change: 0.38
 <li><p>Life Expectancy vs Under-5 Mortality Improvements</p></li>
 <li><p>Life Expectancy vs Adolescent Fertility Improvements</p></li>
 </ul>
-<div id="25265ae9" class="cell" data-execution_count="10">
+<div id="aa38b1ab" class="cell" data-execution_count="10">
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
