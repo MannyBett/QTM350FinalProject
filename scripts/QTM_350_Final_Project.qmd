@@ -4,6 +4,7 @@ author: "Manny Bettencourt (2515997), Kush Bhatia (2498203), Aryan Patel (249402
 format:
   html:
     df-print: paged
+    self-contained: true
   pdf:
     df-print: kable
 execute:
