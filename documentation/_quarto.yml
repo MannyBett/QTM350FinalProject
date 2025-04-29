@@ -1,0 +1,22 @@
+title: "QTM 350 Final Project"
+author: 
+  - "Manny Bettencourt (2515997)"
+  - "Kush Bhatia (2498203)"
+  - "Aryan Patel (2494029)"
+format:
+  html:
+    df-print: paged
+    self-contained: true
+    toc: true
+    toc-location: left
+    toc-depth: 2
+    number-sections: true
+execute:
+  echo: false
+  warning: false
+  message: false
+  cache: true
+  output-dir: "docs"
+publish:
+  gh-pages: true
+  branch: "gh-pages"
