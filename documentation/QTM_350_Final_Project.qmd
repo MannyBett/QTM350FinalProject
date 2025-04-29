@@ -45,13 +45,11 @@ We narrowed our analysis to the period from 1990 to 2023 to ensure consistency a
 
 ## Data Merging Steps
 
--   **Initial Pull**: We pulled the three indicators separately through the `wbdata` API, obtaining raw data tables for life expectancy, under-5 mortality, and adolescent fertility.
+-   **Initial Pull**: We pulled the three indicators (life expectancy, under-5 mortality, and adolescent fertility) directly from the `wbdata` API into a single dataset, with each indicator represented as a separate column.
 
--   **Reshape and Combine**: Each table was reshaped to have a consistent structure (`country`, `date`, `value`) and renamed appropriately.
+-   **Reshape and Structure**: The dataset was structured to include the following columns: `country`, `date`, `life_expectancy`, `under5_mortality_rate`, and `adolescent_fertility_rate`.
 
--   **Merge Process**: Using SQL, the three tables were merged into a single master dataset by matching on `country` and `date`, ensuring that only rows with complete data for all three indicators were included.
-
--   **Storage**: The merged dataset was stored in an SQLite in-memory database for easier querying and preprocessing.
+-   **Storage**: The dataset was stored in an SQLite in-memory database for efficient querying and preprocessing.
 
 ## Data Cleaning
 
